@@ -5,9 +5,9 @@ import {
 export default function Layout () {
   return (
     <>
-      <div id='sidebar'>
+      {/* <div id='sidebar'>
 
-      </div>
+      </div> */}
       <div
         id='detail'
       >
