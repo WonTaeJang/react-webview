@@ -1,7 +1,18 @@
 import '../assets/css/tic-tac-toe.css'
 
 function Square({ value }) {
-  return <button className='square'>{value}</button>
+  const handleClick = () => {
+    console.log('clicked!')
+  }
+
+  return (
+    <button 
+      className='square'
+      onClick={handleClick}
+    >
+      {value}
+    </button>
+  )
 }
 
 export default function Board() {
