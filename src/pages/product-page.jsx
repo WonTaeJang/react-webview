@@ -1,4 +1,5 @@
 import { useState } from "react"
+import '../assets/css/product.css'
 
 const PRODUCTS = [
   {category: "Fruits", price: "$1", stocked: true, name: "Apple"},
@@ -37,13 +38,59 @@ const SearchBar = ({filterText, onChangeFilterText, inStock, onChangeInStock}) =
   )
 }
 
-const ProductTable = ({products}) => {
-  console.log(products)
+const ProductCategoryRow = ({category}) => {
+  return (
+    <div>
+      <span>{category}</span>
+    </div>
+  )
+}
+
+const ProductRow = ({product}) => {
   return (
     <>
-      <div>
-
+      <div className="product-row">
+        <span className={(product.stocked ? '': 'product-row__active')}>{product.name}</span>
+        <span>{product.price}</span>
       </div>
+    </>
+  )
+}
+
+const ProductTable = ({products}) => {
+  const rows = []
+  let lastCategory = null
+
+  for(const product of products) {
+    console.log(product)
+
+    if (product.category !== lastCategory) {
+      rows.push(
+        <ProductCategoryRow 
+          category={product.category} 
+          key={product.category}
+        />
+      )
+
+      lastCategory = product.category
+    }
+
+    rows.push(
+      <ProductRow 
+        product={product}
+        key={product.name}
+      />
+    )
+  }
+
+  return (
+    <>
+      <div className="product-title">
+        <span>Name</span>
+        <span>Price</span>
+      </div>
+
+      <div>{rows}</div>
     </>
   )
 }
@@ -59,15 +106,20 @@ export default function FilterableProductTable () {
         <span>{filterText}</span>
         <span>{inStock.toString()}</span>
       </div> */}
-      <SearchBar 
-        filterText={filterText}
-        onChangeFilterText={setFilterText}
-        inStock={inStock}
-        onChangeInStock={setInStock}
-      />
-      <ProductTable 
-        products={products}
-      />
+      <div className="product">
+        <div className="product-container">
+          <SearchBar 
+            filterText={filterText}
+            onChangeFilterText={setFilterText}
+            inStock={inStock}
+            onChangeInStock={setInStock}
+          />
+          <ProductTable 
+            products={products}
+          />
+        </div>
+
+      </div>
     </>
   )
 }
