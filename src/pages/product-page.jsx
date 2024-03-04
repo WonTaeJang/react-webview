@@ -57,12 +57,20 @@ const ProductRow = ({product}) => {
   )
 }
 
-const ProductTable = ({products}) => {
+const ProductTable = ({products, inStock, search}) => {
   const rows = []
   let lastCategory = null
 
   for(const product of products) {
-    console.log(product)
+    // stock check
+    if(inStock && !product.stocked) {
+      continue
+    }
+
+    // search
+    if(search !== '' && product.name.toLowerCase().indexOf(search.toLowerCase()) === -1) {
+      continue
+    }
 
     if (product.category !== lastCategory) {
       rows.push(
@@ -102,10 +110,6 @@ export default function FilterableProductTable () {
 
   return (
     <>
-      {/* <div>
-        <span>{filterText}</span>
-        <span>{inStock.toString()}</span>
-      </div> */}
       <div className="product">
         <div className="product-container">
           <SearchBar 
@@ -116,6 +120,8 @@ export default function FilterableProductTable () {
           />
           <ProductTable 
             products={products}
+            inStock={inStock}
+            search={filterText}
           />
         </div>
 
