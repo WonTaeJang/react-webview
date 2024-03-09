@@ -4,6 +4,7 @@ import TicTacToe from '../pages/tic-tac-toe.jsx'
 import Layout from '../layout/layout.jsx'
 import ProductPage from "../pages/product-page.jsx"
 import ErrorPage from '../pages/error-page.jsx'
+import FaqPage from '../pages/faq-page.jsx'
 
 export const router = () => {
   return createBrowserRouter([
@@ -23,6 +24,10 @@ export const router = () => {
         {
           path: 'product',
           element: <ProductPage />
+        },
+        {
+          path: 'faq',
+          element: <FaqPage />
         }
       ]
     }

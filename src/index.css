@@ -74,9 +74,9 @@ button:focus-visible {
 
 #detail {
   width: 100%;
-  min-width: 600px;
+  /* min-width: 600px;
   max-width: 1200px;
-  background-color: #747bff;
+  background-color: #747bff; */
 }
 
 #sidebar {
