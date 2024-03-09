@@ -1,26 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-// import App from './App.jsx'
+import axios from 'axios'
+import MockAdapter from 'axios-mock-adapter'
+import testData from '../src/assets/json/test-data.json'
+
 import './index.css'
 import { router } from './routes/routes'
 
-// import Layout from './layout/layout.jsx'
-// import ErrorPage from './pages/error-page'
-
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Layout />,
-//     errorElement: <ErrorPage />,
-//     children: [
-//       {
-//         path: 'help/how-to-use',
-//         element: <App />
-//       }
-//     ]
-//   }
-// ])
+// 
+const mock = new MockAdapter(axios)
+mock.onGet("/faq", { params: { tags: "temp", locale: 'en_US' } }).reply(200, {
+  faqs: [...testData],
+})
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -1,0 +1,112 @@
+[
+  {
+     "faq_id":40,
+     "locale":"en_US",
+     "sort":40,
+     "tags":[
+        "all",
+        "general"
+     ],
+     "question":"general question 1",
+     "answer":"general answer 1"
+  },
+  {
+     "faq_id":41,
+     "locale":"en_US",
+     "sort":41,
+     "tags":[
+        "all",
+        "general"
+     ],
+     "question":"general question 2",
+     "answer":"general answer 2"
+  },
+  {
+     "faq_id":42,
+     "locale":"en_US",
+     "sort":42,
+     "tags":[
+        "all",
+        "general"
+     ],
+     "question":"general question 3",
+     "answer":"general answer 3"
+  },
+  {
+     "faq_id":43,
+     "locale":"en_US",
+     "sort":43,
+     "tags":[
+        "all",
+        "general"
+     ],
+     "question":"general question 4",
+     "answer":"general answer 4"
+  },
+  {
+     "faq_id":50,
+     "locale":"en_US",
+     "sort":50,
+     "tags":[
+        "all",
+        "troubleshooting"
+     ],
+     "question":"troubleshooting question 1",
+     "answer":"troubleshooting answer 1"
+  },
+  {
+     "faq_id":51,
+     "locale":"en_US",
+     "sort":51,
+     "tags":[
+        "all",
+        "troubleshooting"
+     ],
+     "question":"troubleshooting question 2",
+     "answer":"troubleshooting answer 2"
+  },
+  {
+     "faq_id":52,
+     "locale":"en_US",
+     "sort":52,
+     "tags":[
+        "all",
+        "troubleshooting"
+     ],
+     "question":"troubleshooting question 3",
+     "answer":"troubleshooting answer 3"
+  },
+  {
+     "faq_id":53,
+     "locale":"en_US",
+     "sort":53,
+     "tags":[
+        "all",
+        "troubleshooting"
+     ],
+     "question":"troubleshooting question 4",
+     "answer":"troubleshooting answer 4"
+  },
+  {
+     "faq_id":78,
+     "locale":"en_US",
+     "sort":78,
+     "tags":[
+        "all",
+        "android"
+     ],
+     "question":"android question 1",
+     "answer":"android answer 1"
+  },
+  {
+     "faq_id":79,
+     "locale":"en_US",
+     "sort":79,
+     "tags":[
+        "all",
+        "android"
+     ],
+     "question":"android question 2",
+     "answer":"android answer 2"
+  }
+]

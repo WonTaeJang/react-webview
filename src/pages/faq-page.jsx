@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
-
+import axios from 'axios'
 const FaqComponent = () => {
   const location = useLocation()
   const queryParams = new URLSearchParams(location.search)
@@ -9,7 +9,12 @@ const FaqComponent = () => {
 
   console.log(tags, locale)
   useEffect(() => {
-   
+    axios
+    .get("/faq", { params: { tags: tags, locale: locale} })
+    .then(function (response) {
+      console.log(response);
+    })
+  
   }, [])
 
 
